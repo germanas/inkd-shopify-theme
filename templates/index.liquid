@@ -1,0 +1,142 @@
+<!-- /templates/index.liquid -->
+{% comment %}
+
+  This is the homepage of your site.
+
+  More info on global variables (available on all templates):
+    - http://docs.shopify.com/themes/liquid-variables/global
+{% endcomment %}
+
+
+<div class="promo-block">
+  <h1 class="promo-collection-headings">-20% for this collection</h1>
+  <img src="https://pngimg.com/uploads/tshirt/tshirt_PNG5438.png" alt="Mountain View" style='width:5%;' border="0" alt="Null">
+ <button class="blob-btn" name="view" id="view" value="woo">
+                        View
+						 <span class="blob-btn__inner">
+      					<span class="blob-btn__blobs">
+        				<span class="blob-btn__blob"></span>
+                        <span class="blob-btn__blob"></span>
+                        <span class="blob-btn__blob"></span>
+                        <span class="blob-btn__blob"></span>
+                      </span>
+                      </span>
+
+                  </button>
+
+</div>
+<div class="smaller-image-1">
+  
+  <h1 class="promo-collection-headings">Womens collection</h1>
+ <button class="blob-btn" name="view" id="view" value="woo">
+                        View
+						 <span class="blob-btn__inner">
+      					<span class="blob-btn__blobs">
+        				<span class="blob-btn__blob"></span>
+                        <span class="blob-btn__blob"></span>
+                        <span class="blob-btn__blob"></span>
+                        <span class="blob-btn__blob"></span>
+                      </span>
+                      </span>
+
+                  </button>
+
+</div>
+<div class="smaller-image-2">
+  
+  <h1 class="promo-collection-headings">Mens collection </h1>
+ <button class="blob-btn" name="view" id="view" value="woo">
+                        View
+						 <span class="blob-btn__inner">
+      					<span class="blob-btn__blobs">
+        				<span class="blob-btn__blob"></span>
+                        <span class="blob-btn__blob"></span>
+                        <span class="blob-btn__blob"></span>
+                        <span class="blob-btn__blob"></span>
+                      </span>
+                      </span>
+
+                  </button>
+</div>
+
+
+<div class="big-image">
+  <h1 class="promo-collection-headings">T-shirts</h1>
+  <img src="https://pngimg.com/uploads/tshirt/tshirt_PNG5438.png" alt="Mountain View" style='width:25%;' border="0" alt="Null">
+ <button class="blob-btn" name="view" id="view" value="woo">
+                        View
+						 <span class="blob-btn__inner">
+      					<span class="blob-btn__blobs">
+        				<span class="blob-btn__blob"></span>
+                        <span class="blob-btn__blob"></span>
+                        <span class="blob-btn__blob"></span>
+                        <span class="blob-btn__blob"></span>
+                      </span>
+                      </span>
+
+                  </button>
+
+</div>
+
+
+<div class="smaller-image-3">
+  
+  <h1 class="promo-collection-headings">Caps </h1>
+ <button class="blob-btn" name="view" id="view" value="woo">
+                        View
+						 <span class="blob-btn__inner">
+      					<span class="blob-btn__blobs">
+        				<span class="blob-btn__blob"></span>
+                        <span class="blob-btn__blob"></span>
+                        <span class="blob-btn__blob"></span>
+                        <span class="blob-btn__blob"></span>
+                      </span>
+                      </span>
+
+                  </button>
+</div>
+
+
+
+
+
+{% comment %}
+  Use class grid-uniform to have evenly sized columns clear
+  each other properly at each breakpoint.
+{% endcomment %}
+<div class="grid-uniform">
+
+  {% comment %}
+    Loop through products in your Frontpage collection.
+    This collection is created by default, but you must add products to it.
+  {% endcomment %}
+  {% for product in collections.frontpage.products limit:4 %}
+
+    {% comment %}
+      Change the grid item width by using classes from the grid in
+      the grid_item_width variable.
+
+      Example:
+        - {% assign grid_item_width = 'large--one-third medium--one-half' %}
+    {% endcomment %}
+    {% assign grid_item_width = 'large--one-quarter medium--one-half' %}
+    {% include 'product-grid-item' %}
+
+  {% else %}
+    {% comment %}
+      For onboarding new users to your theme, we add some default products and onboarding tutorials to help populate their store
+    {% endcomment %}
+    {% unless emptyState %}
+      {{ 'theme-onboarding.css' | global_asset_url | stylesheet_tag }}
+      {% assign emptyState = true %}
+    {% endunless %}
+
+    {% include 'onboarding-featured-products' %}
+
+  {% endfor %}
+
+</div> 
+
+
+<hr>
+
