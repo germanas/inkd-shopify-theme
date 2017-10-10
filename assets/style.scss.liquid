@@ -3,18 +3,32 @@
 .promo-block{
 
   width: 100%;
-  height: 400px;
+  height: 450px;
   padding:10px;
   background: #5DFDCB url('https://i.pinimg.com/originals/44/1c/a0/441ca05e9eaa5d7ccd023156646c2e20.png') no-repeat;
+  background-position:  270px ;
 
-
-  display: flex;
- 
-   flex-direction: column;
-
-   align-items: center;
-
-   justify-content: center;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: baseline; */
+    /* justify-content: center; */
+    position: relative;
+    /* float: right; */
+  
+}
+.promo-items{
+     position: absolute;
+    /* float: right; */
+    /* margin-left: 1000px; */
+    top: 40%;
+    left: 60%;
+    display: flex;
+    flex-direction: column;
+  
+}
+.promo-block p{
+  
+  
 }
 .big-image{
 
@@ -96,9 +110,12 @@
 
 .promo-collection-headings{
   
- font-family: 'Lobster', cursive;
+font-family: 'Roboto', sans-serif;
+
+
+
  color: #08090A;
- font-size:42px;
+ font-size:32px;
 }
 
 @media (max-width:1045px) {
@@ -106,6 +123,10 @@
       font-size:24px;
       
     }
+  .promo-items{
+    left: 40%;
+    
+  }
   
 }
   
@@ -121,6 +142,12 @@
       margin-top:0px;
       
     }
+    
+     .promo-items{
+    left:auto;
+    
+         
+  }
 	.big-image{
            width: auto;
      float: none;
@@ -148,11 +175,12 @@
       margin-bottom:10px;
     }
     
-    
-  }
+    .promo-block{
+         align-items: center;
+         padding-right: 0px;
 
-    
-    
+    }
+  }
   @media (max-width:600px) {
   .smaller-image-1{
 
@@ -165,5 +193,70 @@
   width: auto;
   float: none;
   }
+    
+}
+
+
+
+
+/* Rottating text styles */
+
+.text {
+  height: 40px;
+
+}
+
+p {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+}
+
+.word {
+  position: absolute;
+  width: 220px;
+  opacity: 0;
+}
+
+.letter {
+  display: inline-block;
+  position: relative;
+  float: left;
+  transform: translateZ(25px);
+  transform-origin: 50% 50% 25px;
+}
+
+.letter.out {
+  transform: rotateX(90deg);
+  transition: transform 0.42s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.letter.behind {
+  transform: rotateX(-90deg);
+}
+
+.letter.in {
+  transform: rotateX(0deg);
+  transition: transform 0.48s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.wisteria {
+  color: #8e44ad;
+}
+
+.belize {
+  color: #2980b9;
+}
+
+.pomegranate {
+  color: #c0392b;
+}
+
+.green {
+  color: #16a085;
+}
+
+.midnight {
+  color: #2c3e50;
 }
 

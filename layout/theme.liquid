@@ -26,8 +26,8 @@
   <link rel="canonical" href="{{ canonical_url }}">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   <meta name="theme-color" content="{{ settings.color_primary }}">
-  <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
 
 
   <!-- CSS ================================================== -->
@@ -37,8 +37,10 @@
   <!-- Header hook for plugins ================================================== -->
   {{ content_for_header }}
   {% include 'oldIE-js' %}
+  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'myscripts.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
 
   {{ '//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js' | script_tag }}
+  {{ 'myscripts.js' | asset_url | script_tag }}
   {{ 'modernizr.min.js' | asset_url | script_tag }}
 
   {% comment %}
@@ -197,6 +199,7 @@
             {% comment %}
               If customer accounts are enabled, provide login and create account links
             {% endcomment %}
+            <!--
             {% if shop.customer_accounts_enabled %}
               <div>
                 {% if customer %}
@@ -212,7 +215,7 @@
                   | {{ 'layout.customer.create_account' | t | customer_register_link }}
                 {% endif %}
               </div>
-            {% endif %}
+            {% endif %} -->
 
 
           </div>
