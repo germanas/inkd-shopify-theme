@@ -385,6 +385,7 @@ $class-type: unquote(".");
   margin: 0;
   padding: 0;
   margin-left: -$gridGutter;
+      margin-top: 20px;
 }
 
 #{$class-type}grid__item {
@@ -1767,8 +1768,8 @@ label.error {
   #Site Header
 ==============================================================================*/
 .site-header {
-  padding: ($gutter / 2) 0;
-
+  /* padding: ($gutter / 2) 0; */
+  padding: 0 0;
   .grid--table {
     display: table;
     table-layout: fixed;
@@ -1862,7 +1863,6 @@ label.error {
 
   .text-right & {
     margin: 0 (-$gutter / 2) 0 0;
-    background-color: #fff;
   }
 }
 
